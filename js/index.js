@@ -86,3 +86,7 @@ class Timer {
 // create "Timer" class - end
 
 const timer = new Timer();
+
+close.addEventListener("click", () => {
+    manageBox.close();
+});

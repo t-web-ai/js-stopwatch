@@ -59,3 +59,40 @@ html {
     padding: 3rem;
 }
 /* result box - end */
+
+/* buttton */
+.btn {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+.btn > div {
+    background-color: var(--primary);
+    position: relative;
+    flex-basis: 120px;
+    text-align: center;
+    padding: 1.2rem;
+    border-radius: 100px;
+    color: white;
+    flex-grow: 1;
+    margin: 10px;
+    cursor: default;
+    font-weight: bolder;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    box-shadow: -3px 3px 3px gray;
+}
+.btn > div:hover {
+    background-color: var(--hover);
+    transition: 0.2s;
+}
+.btn > div:active {
+    background-color: var(--active);
+    transform: translate(-3px, 3px);
+    box-shadow: none;
+}
+/* button */

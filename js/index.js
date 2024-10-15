@@ -35,3 +35,52 @@ const manageResult = {
         clearInterval(this.timeInterval);
     }
 };
+
+
+const startTime = new WeakMap();
+const endTime = new WeakMap();
+const has_started = new WeakMap();
+const previousTime = new WeakMap();
+const result = new WeakMap();
+
+// create "Timer" class - start 
+class Timer {
+    constructor() {
+        startTime.set(this, 0);
+        endTime.set(this, 0);
+        has_started.set(this, null);
+        previousTime.set(this, 0);
+        result.set(this, 0);
+    }
+    start() {
+        if (has_started.get(this))
+            throw "Already Started";
+        has_started.set(this, true);
+        startTime.set(this, (new Date()).getTime());
+    }
+    stop() {
+        if (!has_started.get(this))
+            throw "Didn't even start";
+        previousTime.set(this, result.get(this));
+        has_started.set(this, null);
+    }
+    reset() {
+        if (has_started.get(this))
+            throw "You need to stop the process";
+        startTime.set(this, 0);
+        endTime.set(this, 0);
+        has_started.set(this, null);
+        previousTime.set(this, 0);
+        result.set(this, 0);
+    }
+    result() {
+        if (has_started.get(this)) {
+            endTime.set(this, (new Date()).getTime());
+            result.set(this, parseInt(previousTime.get(this)) + parseInt(((endTime.get(this) - startTime.get(this)) / 1000).toFixed()));
+            return result.get(this);
+        } else {
+            return previousTime.get(this);
+        }
+    }
+}
+// create "Timer" class - end

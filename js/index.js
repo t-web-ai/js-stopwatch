@@ -7,3 +7,19 @@ let errorMsg = document.querySelector(".error-message");
 let resultBox = document.querySelector(".result-box");
 
 errorBox.style.zIndex = "1";
+
+const manageBox = {
+    open: function (message) {
+        errorBox.style.opacity = "1";
+        errorBox.style.transform = "scale(1)";
+        errorBox.style.backdropFilter = "blur(2px)";
+        errorBox.style.zIndex = "1";
+        errorMsg.innerText = message ?? "Initializing...";
+    },
+    close: function () {
+        errorBox.style.opacity = "0";
+        errorBox.style.transform = "scale(0.5)";
+        errorBox.style.backdropFilter = "blur(0)";
+        errorBox.style.zIndex = "0";
+    }
+};

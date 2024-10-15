@@ -23,3 +23,15 @@ const manageBox = {
         errorBox.style.zIndex = "0";
     }
 };
+
+const manageResult = {
+    timeInterval: null,
+    startShowing: function (timer) {
+        this.timeInterval = setInterval(() => {
+            resultBox.innerText = timer.result();
+        }, 500);
+    },
+    stopShowing: function () {
+        clearInterval(this.timeInterval);
+    }
+};

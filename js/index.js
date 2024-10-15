@@ -90,3 +90,12 @@ const timer = new Timer();
 close.addEventListener("click", () => {
     manageBox.close();
 });
+
+start.addEventListener("click", () => {
+    try {
+        timer.start();
+        manageResult.startShowing(timer);
+    } catch (err) {
+        manageBox.open(err);
+    }
+});

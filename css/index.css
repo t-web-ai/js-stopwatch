@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+:root {
+    --primary: #8bc34a;
+    --secondary: #eee;
+    --hover: #a0ca70;
+    --active: rgb(212, 205, 205);
+}

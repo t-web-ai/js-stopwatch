@@ -84,3 +84,5 @@ class Timer {
     }
 }
 // create "Timer" class - end
+
+const timer = new Timer();

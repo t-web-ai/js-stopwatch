@@ -99,3 +99,21 @@ start.addEventListener("click", () => {
         manageBox.open(err);
     }
 });
+
+stop.addEventListener("click", () => {
+    try {
+        timer.stop();
+        manageResult.stopShowing();
+    } catch (err) {
+        manageBox.open(err);
+    }
+});
+
+reset.addEventListener("click", () => {
+    try {
+        timer.reset();
+        resultBox.innerText = timer.result();
+    } catch (err) {
+        manageBox.open(err);
+    }
+});

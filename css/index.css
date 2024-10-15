@@ -39,3 +39,15 @@ html {
     overflow: hidden;
 }
 /* timer box - end */
+
+/* menu bar - start */
+.menu-bar {
+    background-color: var(--primary);
+    color: white;
+    font-weight: bolder;
+    position: relative;
+    text-align: center;
+    padding: 15px;
+    letter-spacing: 1px;
+}
+/* menu bar - end */

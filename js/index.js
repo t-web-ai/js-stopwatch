@@ -29,7 +29,7 @@ const manageResult = {
     startShowing: function (timer) {
         this.timeInterval = setInterval(() => {
             resultBox.innerText = timer.result();
-        }, 500);
+        });
     },
     stopShowing: function () {
         clearInterval(this.timeInterval);
@@ -76,8 +76,8 @@ class Timer {
     result() {
         if (has_started.get(this)) {
             endTime.set(this, (new Date()).getTime());
-            result.set(this, parseInt(previousTime.get(this)) + parseInt(((endTime.get(this) - startTime.get(this)) / 1000).toFixed()));
-            return result.get(this);
+            result.set(this, parseInt(previousTime.get(this)) + parseInt(endTime.get(this) - startTime.get(this)));
+            return (result.get(this) / 1000).toFixed();
         } else {
             return previousTime.get(this);
         }
